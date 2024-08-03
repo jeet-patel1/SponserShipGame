@@ -1,1 +1,10 @@
+8/3/2024 ::
+___________
 
+Changes to be made : ( MINOR ) Proposed by Jeet
+1.Display Inactive Players with their key.
+2.add the condition for the winner at last.
+3.Game will not start unless there is atleast 2 players added.( or disable the start button till two players are added)
+4.once a number is clicked , make sure it is not clickable again.
+5.at last only winner with message should be displayed.
+_____________________________________________________________________________________________________________________________________

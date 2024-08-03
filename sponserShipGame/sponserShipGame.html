@@ -1,0 +1,74 @@
+<template>
+  <template if:true="{activeplayerListFlag}">
+    <div class="container">
+      <h1>Active Playersswssssss</h1>
+      <ul>
+        <template for:each="{activePlayers}" for:item="player">
+          <li key="{player}">{player}</li>
+        </template>
+      </ul>
+    </div>
+  </template>
+  <template if:true="{eliminatedPlayerListFlag}">
+    <div class="container">
+      <h1>INActive Players</h1>
+      <ul>
+        <template for:each="{inactivePlayers}" for:item="player">
+          <li key="{player}">{player}</li>
+        </template>
+      </ul>
+    </div>
+  </template>
+  <template if:false="{showSponserGame}">
+    <div class="container">
+      <h5>Entry Of Play</h5>
+      <div class="input-fields">
+        <label for="playerName">Player Name:</label>
+        <lightning-input
+          type="text"
+          id="playerName"
+          value="{playerName}"
+          onchange="{handleNameChange}"
+        ></lightning-input>
+        <template if:true="{playerNameError}">
+          <p class="error-message">{playerNameError}</p>
+        </template>
+
+        <label for="playerKey">Player Key:</label>
+        <lightning-input
+          type="password"
+          id="playerKey"
+          value="{playerKey}"
+          onchange="{handleKeyChange}"
+        ></lightning-input>
+        <template if:true="{playerKeyError}">
+          <p class="error-message">{playerKeyError}</p>
+        </template>
+      </div>
+      <div>
+        <lightning-button
+          label="Save & New"
+          onclick="{handleSaveAndNew}"
+        ></lightning-button>
+        <lightning-button
+          label="Start the Game"
+          onclick="{handleStartGame}"
+        ></lightning-button>
+      </div>
+    </div>
+  </template>
+  <template if:true="{showSponserGame}">
+    <div class="grid">
+      <template for:each="{numbers}" for:item="number">
+        <div
+          key="{number}"
+          class="grid-item"
+          data-number="{number}"
+          onclick="{handleNumberClick}"
+        >
+          {number}
+        </div>
+      </template>
+    </div>
+  </template>
+</template>
